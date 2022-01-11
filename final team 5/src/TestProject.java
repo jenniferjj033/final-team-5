@@ -48,7 +48,7 @@ public class TestProject extends HttpServlet {
 		HashMap<String, String> query = google.query(request.getParameter("keyword"));
 		// prepare keyword list
 		KeywordList lst = new KeywordList();
-		//String ctgry = lst.filter(request.getParameter("category"));
+		
 		// throw google result and keyword list into CalcScore to calculate each webpage's score and sort
 		CalcScore calc = new CalcScore(query, lst);
 		HashMap<Integer, ArrayList<String>> score = calc.calcScore();
