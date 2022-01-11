@@ -48,7 +48,7 @@ public class TestProject extends HttpServlet {
 		HashMap<String, String> query = google.query(request.getParameter("keyword"));
 		// prepare keyword list
 		KeywordList lst = new KeywordList();
-		String ctgry = lst.filter(request.getParameter("category"));
+		//String ctgry = lst.filter(request.getParameter("category"));
 		// throw google result and keyword list into CalcScore to calculate each webpage's score and sort
 		CalcScore calc = new CalcScore(query, lst);
 		HashMap<Integer, ArrayList<String>> score = calc.calcScore();
@@ -77,7 +77,7 @@ public class TestProject extends HttpServlet {
 			}
 		}
 		
-		String[] info = { request.getParameter("keyword"), String.valueOf(query.size()), ctgry };
+		String[] info = { request.getParameter("keyword"), String.valueOf(query.size()) };
 		request.setAttribute("info", info);
 		
 		request.getRequestDispatcher("googleitem.jsp").forward(request, response);

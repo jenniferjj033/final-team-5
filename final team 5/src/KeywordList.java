@@ -11,7 +11,7 @@ public class KeywordList {
 		lst = new ArrayList<Keyword>();
 	}
 
-	public String filter(String input) {
+	/*public String filter(String input) {
 		// to rebuild the keyword list by user's option
 		String s = "電影";
 		lst.clear();
@@ -41,7 +41,7 @@ public class KeywordList {
 			break;
 		}
 		return s;
-	}
+	}*/
 
 	public void movie() {
 		lst.add(new Keyword("西元", 3));
