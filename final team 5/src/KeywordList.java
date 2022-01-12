@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class KeywordList {
 	/**
@@ -7,14 +10,30 @@ public class KeywordList {
 
 	private ArrayList<Keyword> lst;
 
-	public KeywordList() {
+	public KeywordList() throws FileNotFoundException {
 		lst = new ArrayList<Keyword>();
-		history();
+		readTXT();
 	}
-
 	
+	public void readTXT() throws FileNotFoundException {
+	//	KeywordList lst = new KeywordList();
+		File file = new File("C:\\Users\\st970\\git\\final-team-5(2)\\final team 5\\src\\history.txt");
+		Scanner scanner = new Scanner(file);
 
-	public void history() {
+		while (scanner.hasNext()) {
+			String operation = scanner.next();
+
+			switch (operation) {
+			case "add":
+				String name = scanner.next();
+				int weight = scanner.nextInt();
+				add(new Keyword(name, weight));
+				break;
+			}
+		}
+		scanner.close();
+	}
+	/*public void history() {
 		lst.add(new Keyword("西元", 20));
 		lst.add(new Keyword("歷史", 20));
 		lst.add(new Keyword("炸藥", 20));
@@ -56,9 +75,7 @@ public class KeywordList {
 		lst.add(new Keyword("劇", -10));
 
 		
-	}
-
-	
+	}*/	
 
 	public ArrayList<Keyword> getKeywordList() {
 		return lst;
