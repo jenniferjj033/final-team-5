@@ -1,7 +1,13 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.sun.tools.javac.file.RelativePath;
 
 public class KeywordList {
 	/**
@@ -17,7 +23,9 @@ public class KeywordList {
 	
 	public void readTXT() throws FileNotFoundException {
 	//	KeywordList lst = new KeywordList();
-		File file = new File("C:\\Users\\st970\\git\\final-team-5(2)\\final team 5\\src\\history.txt");
+		File file = new File("history.txt");
+		
+		//C:\\Users\\st970\\git\\final-team-5(2)\\final team 5\\src\\history.txt
 		Scanner scanner = new Scanner(file);
 
 		while (scanner.hasNext()) {
